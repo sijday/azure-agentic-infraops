@@ -10,15 +10,17 @@
 
 **Effort**: 4-5 hrs | **Addresses**: Principle 7 + 10 gaps | **Risk**: Low
 
-Both adversarial reviews said "build validators with their changes." By Phase 7, all structural changes from M1 are merged — we now know the exact rules to enforce.
+Both adversarial reviews said "build validators with their changes."
+By Phase 7, all structural changes from M1 are merged — we now know
+the exact rules to enforce.
 
-| # | Validator | Rule | Remediation Message |
-|---|-----------|------|---------------------|
-| 1 | `validate-skill-size.mjs` | SKILL.md > 200 lines requires `references/` dir | `🔧 Fix: Move detailed content to references/ subdirectory` |
-| 2 | `validate-agent-body-size.mjs` | Agent body > 350 lines | `🔧 Fix: Extract inline code blocks to skill references/ or scripts/` |
-| 3 | `validate-glob-audit.mjs` | Warn on `applyTo: "**"` for instructions > 50 lines | `🔧 Fix: Narrow glob to specific file extensions` |
-| 4 | `validate-skill-references.mjs` | Every `references/` file mentioned in SKILL.md; no orphans; every path resolves | `🔧 Fix: Add loading directive in SKILL.md or remove orphaned file` |
-| 5 | `validate-orphaned-content.mjs` | Detect unreferenced skills, dead references, unused instructions | `🔧 Fix: Add reference or delete unused file` |
+| # | Validator | Rule | Remediation |
+|---|-----------|------|-------------|
+| 1 | `validate-skill-size.mjs` | SKILL.md >200 lines needs `references/` | Move content to `references/` |
+| 2 | `validate-agent-body-size.mjs` | Agent body >350 lines | Extract to skill refs or scripts |
+| 3 | `validate-glob-audit.mjs` | Warn `applyTo: "**"` if >50 lines | Narrow glob to extensions |
+| 4 | `validate-skill-references.mjs` | All `references/` paths resolve; no orphans | Add directive or remove file |
+| 5 | `validate-orphaned-content.mjs` | Detect unreferenced skills/instructions | Add reference or delete |
 
 Additional:
 
@@ -115,4 +117,6 @@ npm run validate:all
 
 ### Adversarial Review Gate
 
-After Phase 9: Run 2x reviews on iac-common skill, challenger restructure, golden-principles integration. Verify shared content is complete and no maintenance gaps created.
+After Phase 9: Run 2x reviews on iac-common skill, challenger
+restructure, golden-principles integration. Verify shared content is
+complete and no maintenance gaps created.

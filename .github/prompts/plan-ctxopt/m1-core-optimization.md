@@ -13,7 +13,9 @@
    - **Avg latency per agent turn**: target <8,000ms (baseline: 11,792ms Opus / 11,379ms Sonnet)
    - **P95 latency**: target <15,000ms (baseline: 28,561ms)
    - **Burst sequences**: target <60 (baseline: 123)
-2. Fix phantom `infraops.toolsets.jsonc` reference in `AGENTS.md` and `copilot-instructions.md` — file doesn't exist; either create it or remove references
+2. Fix phantom `infraops.toolsets.jsonc` reference in `AGENTS.md` and
+   `copilot-instructions.md` — file doesn't exist; either create it or
+   remove references
 3. Create branch `ctx-opt/milestone-1`, tag start point
 4. Run `npm run validate:all` — record baseline
 5. Run e2e conductor test on a fixed simple project with a saved prompt — record latency metrics from chat logs
@@ -56,7 +58,9 @@ Both adversarial reviews agreed — this is the single largest win by 3×. Do it
 
 ### 1.3 — Merge Skill Description Optimization
 
-While touching each skill, update the `description` frontmatter to be trigger-optimized with USE FOR / DO NOT USE FOR patterns per mgechev criteria.
+While touching each skill, update the `description` frontmatter to be
+trigger-optimized with USE FOR / DO NOT USE FOR patterns per mgechev
+criteria.
 
 ### Validation
 
@@ -67,11 +71,15 @@ npm run lint:artifact-templates
 npm run validate:all
 ```
 
-**Canary prompt test**: Invoke the Architect agent (03) with a canned prompt → verify output structure and security content are correct with the split skills.
+**Canary prompt test**: Invoke the Architect agent (03) with a canned
+prompt → verify output structure and security content are correct with
+the split skills.
 
 ### Adversarial Review Gate
 
-After Phase 1: Run 2x reviews (Sonnet 4.6 + GPT 5.3) on split skill structure, reference index, and canary patterns. Verify splits don't lose critical content and progressive loading directives are clear.
+After Phase 1: Run 2x reviews (Sonnet 4.6 + GPT 5.3) on split skill
+structure, reference index, and canary patterns. Verify splits don't
+lose critical content and progressive loading directives are clear.
 
 ---
 
@@ -147,13 +155,16 @@ npm run validate:all
 
 **Effort**: 2-3 hrs | **Addresses**: C5, H9 | **Risk**: Medium
 
-Moved after skill splits because reduced context should independently lower burst sequences and some errors. Now we can isolate remaining errors.
+Moved after skill splits because reduced context should independently
+lower burst sequences and some errors. Now we can isolate remaining
+errors.
 
 | # | Action |
 |---|--------|
-| 1 | Audit the 30 failed requests from session data for patterns — which agents, which operations, which error types |
-| 2 | For server errors triggering retries: add retry-awareness guidance to affected agent bodies ("If tool call fails, wait 3s before retry; do not retry identical calls more than twice") |
-| 3 | Add remediation-rich error messages to the **top-5 most-frequently-failing validators** — format: `❌ {what's wrong}\n   🔧 Fix: {exact edit to resolve}` |
+| 1 | Audit the 30 failed requests from session data for patterns |
+|   | — which agents, which operations, which error types |
+| 2 | Add retry guidance to affected agents: "wait 3s before retry; max 2 identical retries" |
+| 3 | Add remediation-rich error messages to top-5 failing validators |
 
 ### Validation
 
@@ -193,7 +204,8 @@ Per GitHub Blog best practice (from analysis of 2,500+ repos):
 
 ### 5.3 — Surface Commands Early
 
-In all trimmed agent bodies, ensure key commands section appears immediately after the core workflow section — not buried deep.
+In all trimmed agent bodies, ensure key commands section appears
+immediately after the core workflow section — not buried deep.
 
 ### Validation
 
@@ -206,7 +218,9 @@ npm run validate:all
 
 ### Adversarial Review Gate
 
-After Phase 5: Run 2x reviews on trimmed agents, boundary definitions, command placement. Verify agent behavior preserved and three-tier boundaries are meaningful.
+After Phase 5: Run 2x reviews on trimmed agents, boundary definitions,
+command placement. Verify agent behavior preserved and three-tier
+boundaries are meaningful.
 
 ---
 
@@ -214,7 +228,8 @@ After Phase 5: Run 2x reviews on trimmed agents, boundary definitions, command p
 
 **Effort**: 2 hrs | **Risk**: None
 
-Both adversarial reviews insisted on an intermediate measurement after pure context optimization, before any behavioral/architectural changes.
+Both adversarial reviews insisted on an intermediate measurement after
+pure context optimization, before any behavioral/architectural changes.
 
 | # | Action |
 |---|--------|

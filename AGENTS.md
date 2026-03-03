@@ -174,7 +174,6 @@ scripts/               # Validation and maintenance scripts (Node.js)
 docs/                  # User-facing documentation
 .vscode/
   mcp.json             # MCP server configuration (github, microsoft-learn, azure-pricing, terraform)
-  infraops.toolsets.jsonc  # Workspace tool groups for interactive chat (8 toolsets)
 ```
 
 ### Agent Workflow (7 Steps)
