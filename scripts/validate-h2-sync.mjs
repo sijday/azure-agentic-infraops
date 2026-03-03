@@ -2,9 +2,9 @@
 /**
  * H2 Heading Sync Validator
  *
- * Ensures the three sources of truth for artifact H2 headings stay in sync:
- *   1. SKILL.md fenced code blocks (what agents read)
- *   2. azure-artifacts.instructions.md fenced code blocks (auto-applied instructions)
+ * Ensures the sources of truth for artifact H2 headings stay in sync:
+ *   1. SKILL.md + references/ fenced code blocks (what agents read)
+ *   2. azure-artifacts.instructions.md fenced code blocks (optional — checked when present)
  *   3. ARTIFACT_HEADINGS in validate-artifact-templates.mjs (what the validator enforces)
  *
  * @example
@@ -210,11 +210,6 @@ function main() {
       errors++;
       continue;
     }
-    if (!h2Ref) {
-      console.log(`::error::${artifactName}: missing from azure-artifacts`);
-      errors++;
-      continue;
-    }
     if (!validator) {
       console.log(
         `::error::${artifactName}: missing from validator ARTIFACT_HEADINGS`,
@@ -223,7 +218,11 @@ function main() {
       continue;
     }
 
-    compareHeadings(artifactName, skill, h2Ref, "SKILL.md", "H2-reference");
+    // H2-reference (instructions file) is optional — headings may live in
+    // SKILL.md references instead. Only compare when present.
+    if (h2Ref) {
+      compareHeadings(artifactName, skill, h2Ref, "SKILL.md", "H2-reference");
+    }
     compareHeadings(artifactName, skill, validator, "SKILL.md", "Validator");
   }
 
