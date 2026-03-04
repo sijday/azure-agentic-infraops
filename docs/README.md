@@ -41,9 +41,9 @@ Agents are interactive AI assistants for specific workflow phases. Invoke via `C
 
 ### Conductor (Master Orchestrator)
 
-| Agent                        | Persona    | Purpose                                                |
-| ---------------------------- | ---------- | ------------------------------------------------------ |
-| `InfraOps Conductor`         | 🎼 Maestro | Orchestrates all 7 steps with mandatory approval gates |
+| Agent                   | Persona    | Purpose                                                    |
+| ----------------------- | ---------- | ---------------------------------------------------------- |
+| `InfraOps Conductor`    | 🎼 Maestro | Orchestrates all 7 steps with mandatory approval gates     |
 | `Conductor (Fast Path)` | 🎼 Express | Streamlined 5-step path for simple projects (≤3 resources) |
 
 ### Primary Agents (User-Invokable)
