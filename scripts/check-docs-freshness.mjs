@@ -300,9 +300,7 @@ async function checkSkillReferences() {
     if (!(await exists(skillMd))) continue;
 
     const skillContent = await readText(skillMd);
-    const refFiles = (await readdir(refsDir)).filter((f) =>
-      f.endsWith(".md"),
-    );
+    const refFiles = (await readdir(refsDir)).filter((f) => f.endsWith(".md"));
 
     // Check each reference file has a canary marker
     for (const refFile of refFiles) {

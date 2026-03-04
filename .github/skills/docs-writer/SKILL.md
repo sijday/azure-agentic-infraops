@@ -228,8 +228,8 @@ issue with `docs-freshness` label
 
 ## Reference Index
 
-| Reference | When to Load |
-|-----------|-------------|
-| `references/doc-standards.md` | When checking documentation standards |
-| `references/freshness-checklist.md` | When running freshness audits |
-| `references/repo-architecture.md` | When analyzing repo structure |
+| Reference                           | When to Load                          |
+| ----------------------------------- | ------------------------------------- |
+| `references/doc-standards.md`       | When checking documentation standards |
+| `references/freshness-checklist.md` | When running freshness audits         |
+| `references/repo-architecture.md`   | When analyzing repo structure         |

@@ -300,6 +300,6 @@ This skill contains **no project-specific logic**. To use in another project:
 
 ## Reference Index
 
-| Reference | When to Load |
-|-----------|-------------|
+| Reference                        | When to Load                                          |
+| -------------------------------- | ----------------------------------------------------- |
 | `references/token-estimation.md` | When estimating token counts for context optimization |
