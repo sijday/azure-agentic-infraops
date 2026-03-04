@@ -158,7 +158,7 @@ my-awesome-skill/
 
 ## Project-Specific Scaffold Templates
 
-When creating skills for *this* project, use one of these skeletons that match
+When creating skills for _this_ project, use one of these skeletons that match
 the conventions already established in the repository.
 
 ### Azure Knowledge Skill Skeleton
@@ -173,7 +173,7 @@ compatibility: Requires Azure CLI with Bicep extension
 ---
 ```
 
-```markdown
+````markdown
 # Azure {Topic} Skill
 
 One-sentence overview of what this skill provides.
@@ -200,10 +200,10 @@ Explanation and code example:
 
 ## Learn More
 
-| Topic | How to Find |
-| ----- | ----------- |
+| Topic | How to Find                          |
+| ----- | ------------------------------------ |
 | ...   | `microsoft_docs_search(query="...")` |
-```
+````
 
 ### Integration Skill Skeleton
 
@@ -235,6 +235,7 @@ Overview of the integration.
 ## Workflow
 
 ### Step 1: ...
+
 ### Step 2: ...
 
 ---

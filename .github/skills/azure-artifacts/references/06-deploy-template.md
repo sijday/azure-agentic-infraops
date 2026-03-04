@@ -1,4 +1,5 @@
 <!-- ref:06-deploy-template-v1 -->
+
 # Step 6: Deployment Summary Template
 
 ### 06-deployment-summary.md

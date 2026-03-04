@@ -1,4 +1,5 @@
 <!-- ref:tf-best-practices-examples-v1 -->
+
 # Terraform Best Practices — HCL Examples
 
 Detailed HCL code examples for rules in

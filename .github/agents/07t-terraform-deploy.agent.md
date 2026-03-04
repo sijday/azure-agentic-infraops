@@ -115,19 +115,19 @@ handoffs:
 
 ## DO / DON'T
 
-| ✅ DO | ❌ DON'T |
-|---|---|
-| Validate Azure CLI token FIRST (`az account get-access-token`) | Deploy without running `terraform plan` first |
-| Verify state backend storage account BEFORE `terraform init` | Skip phase gates when plan specifies phased deployment |
-| Offer `bootstrap-backend.sh/.ps1` if backend missing | Use `terraform -target` — code is phase-gated via `var.deployment_phase` |
-| Run `terraform validate` and `terraform fmt -check` before planning | Auto-approve production deployments |
-| Check `04-implementation-plan.md` for deployment strategy | Proceed if plan shows resource destruction without approval |
-| Deploy phases one at a time with `var.deployment_phase` + approval gates | Proceed if `terraform validate` fails |
-| Present plan summary; wait for user approval before applying | Create/modify Terraform configs — hand back to Code agent |
-| Require explicit approval for destruction (`- destroy`) operations | Run `terraform init` without verifying backend exists |
-| Generate `06-deployment-summary.md` after deployment | |
-| Run `terraform output` + Azure Resource Graph post-deployment | |
-| Update `agent-output/{project}/README.md` — mark Step 6 complete | |
+| ✅ DO                                                                    | ❌ DON'T                                                                 |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| Validate Azure CLI token FIRST (`az account get-access-token`)           | Deploy without running `terraform plan` first                            |
+| Verify state backend storage account BEFORE `terraform init`             | Skip phase gates when plan specifies phased deployment                   |
+| Offer `bootstrap-backend.sh/.ps1` if backend missing                     | Use `terraform -target` — code is phase-gated via `var.deployment_phase` |
+| Run `terraform validate` and `terraform fmt -check` before planning      | Auto-approve production deployments                                      |
+| Check `04-implementation-plan.md` for deployment strategy                | Proceed if plan shows resource destruction without approval              |
+| Deploy phases one at a time with `var.deployment_phase` + approval gates | Proceed if `terraform validate` fails                                    |
+| Present plan summary; wait for user approval before applying             | Create/modify Terraform configs — hand back to Code agent                |
+| Require explicit approval for destruction (`- destroy`) operations       | Run `terraform init` without verifying backend exists                    |
+| Generate `06-deployment-summary.md` after deployment                     |                                                                          |
+| Run `terraform output` + Azure Resource Graph post-deployment            |                                                                          |
+| Update `agent-output/{project}/README.md` — mark Step 6 complete         |                                                                          |
 
 ## Prerequisites Check
 
@@ -238,6 +238,7 @@ flag prominently and require explicit user acknowledgement before proceeding.
 Read `04-implementation-plan.md` `## Deployment Phases` to determine phased vs single deployment.
 
 **Phased**: Deploy each phase sequentially:
+
 1. `terraform plan -out=tfplan -var="deployment_phase={phase}"` — present summary, get approval
 2. `terraform apply tfplan` — run `terraform output`, verify via ARG, present completion gate
 3. Repeat for next phase

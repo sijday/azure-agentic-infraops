@@ -195,11 +195,11 @@ Review column = adversarial passes by `challenger-review-subagent` (3x = rotatin
 
 ### Content Sharing Decision Framework
 
-| Content Type | Mechanism | When to Use |
-| ------------ | --------- | ----------- |
-| Enforcement rules | Instructions (auto-loaded by glob) | Rules that must apply to all files of a type |
-| Shared domain knowledge | Skill `references/` | Deep content loaded on-demand by agents |
-| Executable scripts | Skill `scripts/` (NOT `references/`) | Deterministic operations, build/deploy scripts |
+| Content Type            | Mechanism                                | When to Use                                    |
+| ----------------------- | ---------------------------------------- | ---------------------------------------------- |
+| Enforcement rules       | Instructions (auto-loaded by glob)       | Rules that must apply to all files of a type   |
+| Shared domain knowledge | Skill `references/`                      | Deep content loaded on-demand by agents        |
+| Executable scripts      | Skill `scripts/` (NOT `references/`)     | Deterministic operations, build/deploy scripts |
 | Cross-agent boilerplate | Subagent or instruction with narrow glob | Repeated patterns across multiple agent bodies |
 
 ## Terraform Conventions

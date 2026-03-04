@@ -115,18 +115,18 @@ handoffs:
 
 ## DO / DON'T
 
-| DO                                                                     | DON'T                                                                |
-| ---------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| Run preflight check BEFORE writing any Terraform (Phase 1)            | Start coding before preflight check                                  |
-| Use AVM-TF modules for EVERY resource that has one                     | Write raw `azurerm` when AVM-TF exists                               |
-| Generate unique suffix ONCE in `locals.tf`, pass to ALL resources      | Hardcode unique strings                                              |
-| Apply baseline tags + governance extras via `local.tags`               | Use hardcoded tag maps ignoring governance                           |
-| Parse `04-governance-constraints.json` — map Deny policies to TF args | Skip governance compliance mapping (HARD GATE)                       |
-| Apply security baseline (TLS 1.2, HTTPS, managed identity, no public) | Use `APPINSIGHTS_INSTRUMENTATIONKEY` (use CONNECTION_STRING)         |
-| Use `var.deployment_phase` + `count` for phased deployment             | Use `terraform -target` or `terraform { cloud { } }` / `TFE_TOKEN`  |
-| Generate bootstrap + deploy scripts (bash + PS)                        | Put hyphens in Storage Account names                                 |
-| Run `terraform validate` + `terraform fmt -check` after generation     | Deploy — that's the Deploy agent's job                               |
-| Save `05-implementation-reference.md` + update project README          | Proceed without checking AVM-TF variable types (known issues exist)  |
+| DO                                                                    | DON'T                                                               |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Run preflight check BEFORE writing any Terraform (Phase 1)            | Start coding before preflight check                                 |
+| Use AVM-TF modules for EVERY resource that has one                    | Write raw `azurerm` when AVM-TF exists                              |
+| Generate unique suffix ONCE in `locals.tf`, pass to ALL resources     | Hardcode unique strings                                             |
+| Apply baseline tags + governance extras via `local.tags`              | Use hardcoded tag maps ignoring governance                          |
+| Parse `04-governance-constraints.json` — map Deny policies to TF args | Skip governance compliance mapping (HARD GATE)                      |
+| Apply security baseline (TLS 1.2, HTTPS, managed identity, no public) | Use `APPINSIGHTS_INSTRUMENTATIONKEY` (use CONNECTION_STRING)        |
+| Use `var.deployment_phase` + `count` for phased deployment            | Use `terraform -target` or `terraform { cloud { } }` / `TFE_TOKEN`  |
+| Generate bootstrap + deploy scripts (bash + PS)                       | Put hyphens in Storage Account names                                |
+| Run `terraform validate` + `terraform fmt -check` after generation    | Deploy — that's the Deploy agent's job                              |
+| Save `05-implementation-reference.md` + update project README         | Proceed without checking AVM-TF variable types (known issues exist) |
 
 ## Prerequisites Check
 
@@ -185,12 +185,12 @@ Build configurations in dependency order from `04-implementation-plan.md`.
 If **phased**: add `variable "deployment_phase"` with `count` conditionals per module.
 If **single**: no `deployment_phase` variable needed.
 
-| Round | Files                                                               |
-| ----- | ------------------------------------------------------------------- |
+| Round | Files                                                                                                |
+| ----- | ---------------------------------------------------------------------------------------------------- |
 | 1     | `versions.tf`, `providers.tf`, `backend.tf`, `variables.tf`, `locals.tf`, `main.tf` (resource group) |
-| 2     | Networking (VNet, subnets, NSGs), Key Vault, Log Analytics + App Insights |
-| 3     | Compute, Data, Messaging — all via AVM-TF modules                   |
-| 4     | Diagnostic settings, role assignments, `outputs.tf`                 |
+| 2     | Networking (VNet, subnets, NSGs), Key Vault, Log Analytics + App Insights                            |
+| 3     | Compute, Data, Messaging — all via AVM-TF modules                                                    |
+| 4     | Diagnostic settings, role assignments, `outputs.tf`                                                  |
 
 After each round: `terraform validate` to catch errors early.
 

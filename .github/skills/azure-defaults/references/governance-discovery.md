@@ -1,4 +1,5 @@
 <!-- ref:governance-discovery-v1 -->
+
 # Governance Discovery Reference
 
 ## MANDATORY Gate
@@ -87,10 +88,10 @@ PolicyResources
 > `bicepPropertyPath`, `azurePropertyPath`, and `requiredValue`
 > fields for each Deny policy.
 
-| Policy             | Impact                        | Solution                        |
-| ------------------ | ----------------------------- | ------------------------------- |
-| Required tags      | Deploy fails without tags     | Include all 4 required tags     |
-| Allowed locations  | Resources rejected            | Use `swedencentral` default     |
-| SQL AAD-only auth  | SQL password auth blocked     | Use `azureADOnlyAuth: true`     |
-| Storage shared key | Shared key access denied      | Use managed identity RBAC       |
-| Zone redundancy    | Non-zonal SKUs rejected       | Use P1v4+ for App Service Plans |
+| Policy             | Impact                    | Solution                        |
+| ------------------ | ------------------------- | ------------------------------- |
+| Required tags      | Deploy fails without tags | Include all 4 required tags     |
+| Allowed locations  | Resources rejected        | Use `swedencentral` default     |
+| SQL AAD-only auth  | SQL password auth blocked | Use `azureADOnlyAuth: true`     |
+| Storage shared key | Shared key access denied  | Use managed identity RBAC       |
+| Zone redundancy    | Non-zonal SKUs rejected   | Use P1v4+ for App Service Plans |

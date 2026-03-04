@@ -107,23 +107,23 @@ These skills are your single source of truth. Do NOT use hardcoded values.
 
 ## DO / DON'T
 
-| DO | DON'T |
-|---|---|
-| Verify Azure connectivity (`az account show`) FIRST | Write ANY Bicep code — this agent plans only |
-| Use REST API for policy discovery (includes inherited policies) | Skip governance discovery — **HARD GATE** |
-| Validate REST API count matches Portal total | Generate plan before asking deployment strategy |
-| Run governance discovery via REST API + ARG BEFORE planning | Use `az policy assignment list` alone (misses inherited) |
-| Check AVM via `mcp_bicep_list_avm_metadata` for every resource | Proceed with incomplete policy data — STOP if REST fails |
-| Use AVM defaults for SKUs; deprecation research only for overrides | Assume SKUs valid without deprecation checks |
-| Check deprecation for non-AVM / custom SKU selections | Hardcode SKUs without AVM verification |
-| Include governance constraints in the plan | Proceed to bicep-code without user approval |
-| Define tasks as YAML-structured specs | Add H2 headings not in the template |
-| Generate `04-implementation-plan.md` and `04-governance-constraints.md` | Ignore policy `effect` — `Deny` = blocker, `Audit` = warning |
-| Auto-generate `04-dependency-diagram.py/.png` and `04-runtime-diagram.py/.png` | Generate governance from best-practice assumptions |
-| Match H2 headings from azure-artifacts skill exactly | |
-| Update `agent-output/{project}/README.md` — mark Step 4 complete | |
-| Ask user for deployment strategy — **MANDATORY GATE** | |
-| Default: phased deployment (>5 resources). Wait for approval before handoff | |
+| DO                                                                             | DON'T                                                        |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------ |
+| Verify Azure connectivity (`az account show`) FIRST                            | Write ANY Bicep code — this agent plans only                 |
+| Use REST API for policy discovery (includes inherited policies)                | Skip governance discovery — **HARD GATE**                    |
+| Validate REST API count matches Portal total                                   | Generate plan before asking deployment strategy              |
+| Run governance discovery via REST API + ARG BEFORE planning                    | Use `az policy assignment list` alone (misses inherited)     |
+| Check AVM via `mcp_bicep_list_avm_metadata` for every resource                 | Proceed with incomplete policy data — STOP if REST fails     |
+| Use AVM defaults for SKUs; deprecation research only for overrides             | Assume SKUs valid without deprecation checks                 |
+| Check deprecation for non-AVM / custom SKU selections                          | Hardcode SKUs without AVM verification                       |
+| Include governance constraints in the plan                                     | Proceed to bicep-code without user approval                  |
+| Define tasks as YAML-structured specs                                          | Add H2 headings not in the template                          |
+| Generate `04-implementation-plan.md` and `04-governance-constraints.md`        | Ignore policy `effect` — `Deny` = blocker, `Audit` = warning |
+| Auto-generate `04-dependency-diagram.py/.png` and `04-runtime-diagram.py/.png` | Generate governance from best-practice assumptions           |
+| Match H2 headings from azure-artifacts skill exactly                           |                                                              |
+| Update `agent-output/{project}/README.md` — mark Step 4 complete               |                                                              |
+| Ask user for deployment strategy — **MANDATORY GATE**                          |                                                              |
+| Default: phased deployment (>5 resources). Wait for approval before handoff    |                                                              |
 
 ## Prerequisites Check
 
@@ -228,13 +228,13 @@ Reply "approve" to proceed to bicep-code, or provide feedback.
 
 ## Output Files
 
-| File | Location | Template |
-|---|---|---|
-| Implementation Plan | `agent-output/{project}/04-implementation-plan.md` | From azure-artifacts skill |
-| Governance Constraints | `agent-output/{project}/04-governance-constraints.md` | From azure-artifacts skill |
-| Governance JSON | `agent-output/{project}/04-governance-constraints.json` | Machine-readable policy data |
-| Dependency Diagram | `agent-output/{project}/04-dependency-diagram.py` + `.png` | Python diagrams |
-| Runtime Diagram | `agent-output/{project}/04-runtime-diagram.py` + `.png` | Python diagrams |
+| File                   | Location                                                   | Template                     |
+| ---------------------- | ---------------------------------------------------------- | ---------------------------- |
+| Implementation Plan    | `agent-output/{project}/04-implementation-plan.md`         | From azure-artifacts skill   |
+| Governance Constraints | `agent-output/{project}/04-governance-constraints.md`      | From azure-artifacts skill   |
+| Governance JSON        | `agent-output/{project}/04-governance-constraints.json`    | Machine-readable policy data |
+| Dependency Diagram     | `agent-output/{project}/04-dependency-diagram.py` + `.png` | Python diagrams              |
+| Runtime Diagram        | `agent-output/{project}/04-runtime-diagram.py` + `.png`    | Python diagrams              |
 
 > [!IMPORTANT]
 > `04-governance-constraints.json` is consumed downstream by Code Generator (Phase 1.5) and

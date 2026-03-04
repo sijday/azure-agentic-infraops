@@ -1,16 +1,17 @@
 <!-- ref:security-baseline-full-v1 -->
+
 # Security Baseline & AVM Known Pitfalls
 
 ## AVM Known Pitfalls
 
 ### Region Limitations
 
-| Service         | Limitation                            | Workaround                       |
-| --------------- | ------------------------------------- | -------------------------------- |
-| Static Web Apps | 5 regions only (westus2, centralus,   | Use `westeurope` for EU          |
-|                 | eastus2, westeurope, eastasia)        |                                  |
-| Azure OpenAI    | Limited regions per model             | Check availability before plan   |
-| Container Apps  | Most regions but not all              | Verify `cae` in target region    |
+| Service         | Limitation                          | Workaround                     |
+| --------------- | ----------------------------------- | ------------------------------ |
+| Static Web Apps | 5 regions only (westus2, centralus, | Use `westeurope` for EU        |
+|                 | eastus2, westeurope, eastasia)      |                                |
+| Azure OpenAI    | Limited regions per model           | Check availability before plan |
+| Container Apps  | Most regions but not all            | Verify `cae` in target region  |
 
 ### Parameter Type Mismatches
 
@@ -71,7 +72,7 @@ When using AVM modules with default SKU parameters:
 
 ### Deprecation Research (For Non-AVM or Custom SKUs)
 
-| Source            | Query Pattern                             | Reliability |
+| Source            | Query Pattern                            | Reliability |
 | ----------------- | ---------------------------------------- | ----------- |
 | Azure Updates     | `azure.microsoft.com/updates/?query=...` | High        |
 | Microsoft Learn   | Check "Important" callouts on pages      | High        |

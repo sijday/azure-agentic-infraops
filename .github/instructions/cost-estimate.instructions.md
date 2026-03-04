@@ -60,14 +60,14 @@ Section templates and visual styling:
 
 ## Patterns to Avoid
 
-| Anti-Pattern           | Solution                                           |
-| ---------------------- | -------------------------------------------------- |
-| Missing cost drivers   | Include top 5 drivers table                        |
-| Missing assumptions    | Document usage and pricing basis                   |
-| No "what changes cost" | Include the decision matrix                        |
-| No risk callouts       | Include cost risk indicators + watch item          |
-| No savings section     | Always include savings, even if optimized          |
-| Stale prices           | Note query date; re-validate periodically          |
-| Missing change control | Include top 3 likely change requests + delta       |
-| Hidden trade-offs      | Add "What we are not paying for (yet)"             |
-| Unclear variance       | Add confidence, variance, base vs variable split   |
+| Anti-Pattern           | Solution                                         |
+| ---------------------- | ------------------------------------------------ |
+| Missing cost drivers   | Include top 5 drivers table                      |
+| Missing assumptions    | Document usage and pricing basis                 |
+| No "what changes cost" | Include the decision matrix                      |
+| No risk callouts       | Include cost risk indicators + watch item        |
+| No savings section     | Always include savings, even if optimized        |
+| Stale prices           | Note query date; re-validate periodically        |
+| Missing change control | Include top 3 likely change requests + delta     |
+| Hidden trade-offs      | Add "What we are not paying for (yet)"           |
+| Unclear variance       | Add confidence, variance, base vs variable split |

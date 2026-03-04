@@ -1,4 +1,5 @@
 <!-- ref:07-docs-template-v1 -->
+
 # Step 7: Workload Documentation Templates
 
 ### 07-documentation-index.md
@@ -118,9 +119,9 @@
 ## Step 7 Source Artifacts
 
 | Source                          | Information Extracted              |
-| ------------------------------- | --------------------------------- |
+| ------------------------------- | ---------------------------------- |
 | `01-requirements.md`            | Business context, NFRs, compliance |
-| `02-architecture-assessment.md` | WAF scores, SKU recommendations   |
-| `04-implementation-plan.md`     | Resource inventory, dependencies  |
-| `06-deployment-summary.md`      | Deployed resources, outputs       |
-| `infra/bicep/{project}/`        | Actual Bicep configuration values |
+| `02-architecture-assessment.md` | WAF scores, SKU recommendations    |
+| `04-implementation-plan.md`     | Resource inventory, dependencies   |
+| `06-deployment-summary.md`      | Deployed resources, outputs        |
+| `infra/bicep/{project}/`        | Actual Bicep configuration values  |

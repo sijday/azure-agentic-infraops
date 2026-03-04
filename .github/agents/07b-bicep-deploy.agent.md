@@ -118,19 +118,19 @@ handoffs:
 
 ## DO / DON'T
 
-| ✅ DO | ❌ DON'T |
-|---|---|
-| Run preflight validation BEFORE deployment | Deploy without running what-if first |
-| Check `04-implementation-plan.md` for deployment strategy | Skip phase gates when plan specifies phased deployment |
-| Deploy phases one at a time with approval gates | Use `--output yaml/json` for what-if (disables rendering) |
-| Use **default output** for what-if (no `--output` flag) | Auto-approve production deployments |
-| Validate auth via `az account get-access-token` (not just `show`) | Proceed if what-if shows Delete ops without approval |
-| Present what-if summary; wait for user approval | Proceed if `bicep build` fails |
-| Require explicit approval for Delete (`-`) operations | Create/modify Bicep templates — hand back to Code agent |
-| Generate `06-deployment-summary.md` after deployment | |
-| Verify resources via Azure Resource Graph post-deploy | |
-| Scan what-if output for deprecation signals | |
-| Update `agent-output/{project}/README.md` — mark Step 6 complete | |
+| ✅ DO                                                             | ❌ DON'T                                                  |
+| ----------------------------------------------------------------- | --------------------------------------------------------- |
+| Run preflight validation BEFORE deployment                        | Deploy without running what-if first                      |
+| Check `04-implementation-plan.md` for deployment strategy         | Skip phase gates when plan specifies phased deployment    |
+| Deploy phases one at a time with approval gates                   | Use `--output yaml/json` for what-if (disables rendering) |
+| Use **default output** for what-if (no `--output` flag)           | Auto-approve production deployments                       |
+| Validate auth via `az account get-access-token` (not just `show`) | Proceed if what-if shows Delete ops without approval      |
+| Present what-if summary; wait for user approval                   | Proceed if `bicep build` fails                            |
+| Require explicit approval for Delete (`-`) operations             | Create/modify Bicep templates — hand back to Code agent   |
+| Generate `06-deployment-summary.md` after deployment              |                                                           |
+| Verify resources via Azure Resource Graph post-deploy             |                                                           |
+| Scan what-if output for deprecation signals                       |                                                           |
+| Update `agent-output/{project}/README.md` — mark Step 6 complete  |                                                           |
 
 ## Prerequisites Check
 

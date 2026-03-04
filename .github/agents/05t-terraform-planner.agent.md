@@ -106,18 +106,18 @@ handoffs:
 
 ## DO / DON'T
 
-| DO                                                                     | DON'T                                                                  |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| Verify Azure connectivity (`az account show`) FIRST                    | Write ANY Terraform code — this agent plans only                       |
-| Run governance discovery via REST API + ARG BEFORE planning            | Skip governance discovery (HARD GATE)                                  |
-| Check AVM-TF for EVERY resource (`terraform/search_modules`)           | Generate plan before asking deployment strategy (Phase 3.5 mandatory)  |
-| Use `terraform/get_module_details` for variable schema                 | Use `az policy assignment list` alone (misses mgmt group policies)     |
-| always use `azurePropertyPath` (not `bicepPropertyPath`) in plan       | Plan `terraform { cloud { } }` or `TFE_TOKEN` usage                   |
-| Define tasks as YAML specs (resource, module, dependencies, config)    | Plan backends other than Azure Storage Account                         |
-| Generate `04-implementation-plan.md` + `04-governance-constraints.md`  | Proceed to terraform-code without explicit user approval               |
-| Auto-generate `04-dependency-diagram.py/.png` + `04-runtime-diagram`   | Ignore policy `effect` — `Deny` = blocker, `Audit` = warning only     |
-| Ask user for deployment strategy (phased vs single) — MANDATORY GATE   | Use archived tool names (`moduleSearch` etc.) — use `terraform/*` MCP  |
-| Match H2 headings from azure-artifacts templates exactly               | Generate governance from best-practice assumptions                     |
+| DO                                                                    | DON'T                                                                 |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Verify Azure connectivity (`az account show`) FIRST                   | Write ANY Terraform code — this agent plans only                      |
+| Run governance discovery via REST API + ARG BEFORE planning           | Skip governance discovery (HARD GATE)                                 |
+| Check AVM-TF for EVERY resource (`terraform/search_modules`)          | Generate plan before asking deployment strategy (Phase 3.5 mandatory) |
+| Use `terraform/get_module_details` for variable schema                | Use `az policy assignment list` alone (misses mgmt group policies)    |
+| always use `azurePropertyPath` (not `bicepPropertyPath`) in plan      | Plan `terraform { cloud { } }` or `TFE_TOKEN` usage                   |
+| Define tasks as YAML specs (resource, module, dependencies, config)   | Plan backends other than Azure Storage Account                        |
+| Generate `04-implementation-plan.md` + `04-governance-constraints.md` | Proceed to terraform-code without explicit user approval              |
+| Auto-generate `04-dependency-diagram.py/.png` + `04-runtime-diagram`  | Ignore policy `effect` — `Deny` = blocker, `Audit` = warning only     |
+| Ask user for deployment strategy (phased vs single) — MANDATORY GATE  | Use archived tool names (`moduleSearch` etc.) — use `terraform/*` MCP |
+| Match H2 headings from azure-artifacts templates exactly              | Generate governance from best-practice assumptions                    |
 
 ## Prerequisites Check
 
@@ -214,13 +214,13 @@ deployment strategy, backend, challenger findings. Wait for "approve" before han
 
 ## Output Files
 
-| File                       | Location                                                |
-| -------------------------- | ------------------------------------------------------- |
-| Implementation Plan        | `agent-output/{project}/04-implementation-plan.md`      |
-| Governance Constraints     | `agent-output/{project}/04-governance-constraints.md`   |
-| Governance JSON            | `agent-output/{project}/04-governance-constraints.json` |
-| Dependency Diagram         | `agent-output/{project}/04-dependency-diagram.py/.png`  |
-| Runtime Diagram            | `agent-output/{project}/04-runtime-diagram.py/.png`     |
+| File                   | Location                                                |
+| ---------------------- | ------------------------------------------------------- |
+| Implementation Plan    | `agent-output/{project}/04-implementation-plan.md`      |
+| Governance Constraints | `agent-output/{project}/04-governance-constraints.md`   |
+| Governance JSON        | `agent-output/{project}/04-governance-constraints.json` |
+| Dependency Diagram     | `agent-output/{project}/04-dependency-diagram.py/.png`  |
+| Runtime Diagram        | `agent-output/{project}/04-runtime-diagram.py/.png`     |
 
 > [!IMPORTANT]
 > `04-governance-constraints.json` is consumed by Terraform CodeGen (Phase 1.5) and

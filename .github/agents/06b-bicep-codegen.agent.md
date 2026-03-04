@@ -105,18 +105,18 @@ handoffs:
 
 ## DO / DON'T
 
-| DO                                                                     | DON'T                                                              |
-| ---------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| Run preflight check BEFORE writing any Bicep (Phase 1)                | Start coding before preflight check                                |
-| Use AVM modules for EVERY resource that has one                        | Write raw Bicep when AVM exists                                    |
-| Generate `uniqueSuffix` ONCE in `main.bicep`, pass to ALL modules      | Hardcode unique strings                                            |
-| Apply baseline tags + governance extras                                | Use hardcoded tag lists ignoring governance                        |
-| Parse `04-governance-constraints.json` — map each Deny policy to Bicep | Skip governance compliance mapping (HARD GATE)                     |
-| Apply security baseline (TLS 1.2, HTTPS, managed identity, no public) | Use `APPINSIGHTS_INSTRUMENTATIONKEY` (use CONNECTION_STRING)       |
-| Use `take()` for length-constrained resources (KV≤24, Storage≤24)     | Put hyphens in Storage Account names                               |
-| Generate `deploy.ps1` + `.bicepparam` per environment                  | Deploy — that's the Deploy agent's job                             |
-| Run `bicep build` + `bicep lint` after generation                      | Proceed without checking AVM parameter types (known issues exist)  |
-| Save `05-implementation-reference.md` + update project README          | Use phase parameter if plan specifies single deployment            |
+| DO                                                                     | DON'T                                                             |
+| ---------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Run preflight check BEFORE writing any Bicep (Phase 1)                 | Start coding before preflight check                               |
+| Use AVM modules for EVERY resource that has one                        | Write raw Bicep when AVM exists                                   |
+| Generate `uniqueSuffix` ONCE in `main.bicep`, pass to ALL modules      | Hardcode unique strings                                           |
+| Apply baseline tags + governance extras                                | Use hardcoded tag lists ignoring governance                       |
+| Parse `04-governance-constraints.json` — map each Deny policy to Bicep | Skip governance compliance mapping (HARD GATE)                    |
+| Apply security baseline (TLS 1.2, HTTPS, managed identity, no public)  | Use `APPINSIGHTS_INSTRUMENTATIONKEY` (use CONNECTION_STRING)      |
+| Use `take()` for length-constrained resources (KV≤24, Storage≤24)      | Put hyphens in Storage Account names                              |
+| Generate `deploy.ps1` + `.bicepparam` per environment                  | Deploy — that's the Deploy agent's job                            |
+| Run `bicep build` + `bicep lint` after generation                      | Proceed without checking AVM parameter types (known issues exist) |
+| Save `05-implementation-reference.md` + update project README          | Use phase parameter if plan specifies single deployment           |
 
 ## Prerequisites Check
 
@@ -174,12 +174,12 @@ Build templates in dependency order from `04-implementation-plan.md`.
 If **phased**: add `@allowed` `phase` parameter, wrap modules in `if phase == 'all' || phase == '{name}'`.
 If **single**: no phase parameter needed.
 
-| Round | Content                                                         |
-| ----- | --------------------------------------------------------------- |
+| Round | Content                                                        |
+| ----- | -------------------------------------------------------------- |
 | 1     | `main.bicep` (params, vars, `uniqueSuffix`), `main.bicepparam` |
-| 2     | Networking, Key Vault, Log Analytics + App Insights             |
-| 3     | Compute, Data, Messaging                                        |
-| 4     | Diagnostic settings, role assignments, `deploy.ps1`             |
+| 2     | Networking, Key Vault, Log Analytics + App Insights            |
+| 3     | Compute, Data, Messaging                                       |
+| 4     | Diagnostic settings, role assignments, `deploy.ps1`            |
 
 After each round: `bicep build` to catch errors early.
 

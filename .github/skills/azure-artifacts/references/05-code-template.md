@@ -1,4 +1,5 @@
 <!-- ref:05-code-template-v1 -->
+
 # Step 5: Implementation Reference Template
 
 ### 05-implementation-reference.md

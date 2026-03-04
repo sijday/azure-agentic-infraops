@@ -1,4 +1,5 @@
 <!-- ref:styling-standards-v1 -->
+
 # Documentation Styling Standards
 
 ## Callout Styles
@@ -22,14 +23,14 @@
 
 ## Status Emoji
 
-| Purpose           | Emoji | Example                      |
-| ----------------- | ----- | ---------------------------- |
-| Success/Complete  | ✅    | `✅ Health check passed`     |
-| Warning/Attention | ⚠️    | `⚠️ Requires manual config`  |
-| Error/Critical    | ❌    | `❌ Validation failed`       |
-| Info/Tip          | 💡    | `💡 Consider Premium tier`   |
-| Security          | 🔐    | `🔐 Requires Key Vault`      |
-| Cost              | 💰    | `💰 Estimated: $50/month`    |
+| Purpose           | Emoji | Example                     |
+| ----------------- | ----- | --------------------------- |
+| Success/Complete  | ✅    | `✅ Health check passed`    |
+| Warning/Attention | ⚠️    | `⚠️ Requires manual config` |
+| Error/Critical    | ❌    | `❌ Validation failed`      |
+| Info/Tip          | 💡    | `💡 Consider Premium tier`  |
+| Security          | 🔐    | `🔐 Requires Key Vault`     |
+| Cost              | 💰    | `💰 Estimated: $50/month`   |
 
 ## Category Icons
 
@@ -102,14 +103,14 @@ Header (after attribution):
 
 ## Common Reference Links
 
-| Topic               | URL                                                             |
-| ------------------- | --------------------------------------------------------------- |
-| WAF Overview         | `https://learn.microsoft.com/azure/well-architected/`           |
-| Security Checklist   | `.../azure/well-architected/security/checklist`                 |
-| Reliability          | `.../azure/well-architected/reliability/checklist`              |
-| Cost Optimization    | `.../azure/well-architected/cost-optimization/checklist`        |
-| Azure Backup         | `.../azure/backup/backup-best-practices`                        |
-| Azure Monitor        | `.../azure/azure-monitor/overview`                              |
-| Managed Identities   | `.../entra/identity/managed-identities-azure-resources/overview` |
-| Key Vault Practices  | `.../azure/key-vault/general/best-practices`                    |
-| Pricing Calculator   | `https://azure.microsoft.com/pricing/calculator/`              |
+| Topic               | URL                                                              |
+| ------------------- | ---------------------------------------------------------------- |
+| WAF Overview        | `https://learn.microsoft.com/azure/well-architected/`            |
+| Security Checklist  | `.../azure/well-architected/security/checklist`                  |
+| Reliability         | `.../azure/well-architected/reliability/checklist`               |
+| Cost Optimization   | `.../azure/well-architected/cost-optimization/checklist`         |
+| Azure Backup        | `.../azure/backup/backup-best-practices`                         |
+| Azure Monitor       | `.../azure/azure-monitor/overview`                               |
+| Managed Identities  | `.../entra/identity/managed-identities-azure-resources/overview` |
+| Key Vault Practices | `.../azure/key-vault/general/best-practices`                     |
+| Pricing Calculator  | `https://azure.microsoft.com/pricing/calculator/`                |

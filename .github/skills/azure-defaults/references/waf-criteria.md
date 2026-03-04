@@ -1,4 +1,5 @@
 <!-- ref:waf-criteria-v1 -->
+
 # WAF Assessment Criteria
 
 ## Scoring Scale

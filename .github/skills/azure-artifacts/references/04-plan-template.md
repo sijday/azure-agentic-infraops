@@ -1,4 +1,5 @@
 <!-- ref:04-plan-template-v1 -->
+
 # Step 4: Implementation Plan Templates
 
 ### 04-governance-constraints.md

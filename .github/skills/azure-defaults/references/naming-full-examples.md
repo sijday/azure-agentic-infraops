@@ -1,4 +1,5 @@
 <!-- ref:naming-full-examples-v1 -->
+
 # Naming Conventions — Extended Reference
 
 ## Length-Constrained Resources
@@ -31,14 +32,14 @@ var stName = 'st${take(replace(projectName, '-', ''), 8)}${take(environment, 3)}
 
 Additional resources beyond the core CAF table:
 
-| Resource               | Abbreviation | Name Pattern                  | Max |
-| ---------------------- | ------------ | ----------------------------- | --- |
-| Container App          | `ca`         | `ca-{project}-{env}`          | 32  |
-| Container Env          | `cae`        | `cae-{project}-{env}`         | 60  |
-| Cosmos DB              | `cosmos`     | `cosmos-{project}-{env}`      | 44  |
-| Service Bus            | `sb`         | `sb-{project}-{env}`          | 50  |
-| Private DNS Zone       | (varies)     | `privatelink.{service}.core`  | 63  |
-| User-Assigned Identity | `id`         | `id-{project}-{env}`          | 128 |
-| API Management         | `apim`       | `apim-{project}-{env}`        | 50  |
-| Container Registry     | `acr`        | `acr{project}{env}{suffix}`   | 50  |
-| Event Hub              | `evh`        | `evh-{project}-{env}`         | 50  |
+| Resource               | Abbreviation | Name Pattern                 | Max |
+| ---------------------- | ------------ | ---------------------------- | --- |
+| Container App          | `ca`         | `ca-{project}-{env}`         | 32  |
+| Container Env          | `cae`        | `cae-{project}-{env}`        | 60  |
+| Cosmos DB              | `cosmos`     | `cosmos-{project}-{env}`     | 44  |
+| Service Bus            | `sb`         | `sb-{project}-{env}`         | 50  |
+| Private DNS Zone       | (varies)     | `privatelink.{service}.core` | 63  |
+| User-Assigned Identity | `id`         | `id-{project}-{env}`         | 128 |
+| API Management         | `apim`       | `apim-{project}-{env}`       | 50  |
+| Container Registry     | `acr`        | `acr{project}{env}{suffix}`  | 50  |
+| Event Hub              | `evh`        | `evh-{project}-{env}`        | 50  |

@@ -169,16 +169,16 @@ Master orchestrator for the 7-step Azure infrastructure development workflow.
 
 ## DO / DON'T
 
-| ✅ DO | ❌ DON'T |
-|---|---|
-| Pause at EVERY approval gate; wait for confirmation | Read skills/templates before asking project name via `askQuestions` |
-| Delegate to subagents via `#runSubagent` | Skip approval gates — EVER |
-| Track progress via artifact files in `agent-output/{project}/` | Deploy without validation (Deploy agent handles preflight) |
-| Summarize subagent results concisely | Modify files directly — delegate to appropriate agent |
-| Create `agent-output/{project}/` + `00-session-state.json` at start | Include raw subagent dumps |
-| Ensure `README.md` exists (Requirements agent creates it) | Combine multiple steps without approval between them |
-| Write `00-handoff.md` at EVERY gate before presenting | Skip `00-handoff.md` or `00-session-state.json` updates |
-| Update `00-session-state.json` at EVERY gate | |
+| ✅ DO                                                               | ❌ DON'T                                                            |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Pause at EVERY approval gate; wait for confirmation                 | Read skills/templates before asking project name via `askQuestions` |
+| Delegate to subagents via `#runSubagent`                            | Skip approval gates — EVER                                          |
+| Track progress via artifact files in `agent-output/{project}/`      | Deploy without validation (Deploy agent handles preflight)          |
+| Summarize subagent results concisely                                | Modify files directly — delegate to appropriate agent               |
+| Create `agent-output/{project}/` + `00-session-state.json` at start | Include raw subagent dumps                                          |
+| Ensure `README.md` exists (Requirements agent creates it)           | Combine multiple steps without approval between them                |
+| Write `00-handoff.md` at EVERY gate before presenting               | Skip `00-handoff.md` or `00-session-state.json` updates             |
+| Update `00-session-state.json` at EVERY gate                        |                                                                     |
 
 ## The 7-Step Workflow
 
@@ -278,6 +278,7 @@ At every approval gate, write `agent-output/{project}/00-handoff.md`
 Header: `# {Project} — Handoff (Step {N} complete)` with metadata line (`Updated: {ISO} | IaC: {tool} | Branch: {branch}`).
 
 **Required H2 sections:**
+
 - `## Completed Steps` — checklist with artifact paths (e.g., `- [x] Step 1 → agent-output/{project}/01-requirements.md`)
 - `## Key Decisions` — region, compliance, budget, IaC tool, architecture pattern
 - `## Open Challenger Findings (must_fix only)` — unresolved must_fix titles or "None"

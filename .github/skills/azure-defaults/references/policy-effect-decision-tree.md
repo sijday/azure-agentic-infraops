@@ -1,4 +1,5 @@
 <!-- ref:policy-effect-decision-tree-v1 -->
+
 # Policy Effect Decision Tree
 
 Use this table when translating Azure Policy discovery results into
@@ -16,13 +17,13 @@ IaC planning actions and code generation requirements.
 
 ## Code Generator Action (Steps 5/06b/06t)
 
-| Effect              | Code Generator Action                                    |
-| ------------------- | -------------------------------------------------------- |
-| `Deny`              | MUST set property to compliant value                     |
-| `Modify`            | Document expected modification — do NOT set conflicting  |
-| `DeployIfNotExists` | Document auto-deployed resource in implementation ref    |
-| `Audit`             | Set compliant value where feasible (best effort)         |
-| `Disabled`          | No action required                                       |
+| Effect              | Code Generator Action                                   |
+| ------------------- | ------------------------------------------------------- |
+| `Deny`              | MUST set property to compliant value                    |
+| `Modify`            | Document expected modification — do NOT set conflicting |
+| `DeployIfNotExists` | Document auto-deployed resource in implementation ref   |
+| `Audit`             | Set compliant value where feasible (best effort)        |
+| `Disabled`          | No action required                                      |
 
 > [!NOTE]
 > For Terraform, `Deny` means set the **translated Terraform argument**

@@ -1,4 +1,5 @@
 <!-- ref:research-workflow-v1 -->
+
 # Research Workflow (All Agents)
 
 ## Standard 4-Step Pattern
@@ -14,11 +15,11 @@
 
 ## Confidence Levels
 
-| Level           | Indicators                  | Action                    |
-| --------------- | --------------------------- | ------------------------- |
-| High (80-100%)  | All critical info available | Proceed                   |
-| Medium (60-79%) | Some assumptions needed     | Document, ask for gaps    |
-| Low (0-59%)     | Major gaps                  | STOP — request clarify    |
+| Level           | Indicators                  | Action                 |
+| --------------- | --------------------------- | ---------------------- |
+| High (80-100%)  | All critical info available | Proceed                |
+| Medium (60-79%) | Some assumptions needed     | Document, ask for gaps |
+| Low (0-59%)     | Major gaps                  | STOP — request clarify |
 
 ## Context Reuse Rules
 
@@ -33,13 +34,13 @@
 
 ## Agent-Specific Research Focus
 
-| Agent        | Primary Research                   | Skip                       |
-| ------------ | ---------------------------------- | -------------------------- |
-| Requirements | User needs, business context       | —                          |
-| Architect    | WAF gaps, SKU comparisons, pricing | Service list (from 01)     |
-| IaC Plan     | AVM availability, governance       | Architecture (from 02)     |
-| IaC Code     | AVM schemas, parameter types       | Resource list (from 04)    |
-| Deploy       | Azure state (what-if), credentials | Template structure         |
+| Agent        | Primary Research                   | Skip                    |
+| ------------ | ---------------------------------- | ----------------------- |
+| Requirements | User needs, business context       | —                       |
+| Architect    | WAF gaps, SKU comparisons, pricing | Service list (from 01)  |
+| IaC Plan     | AVM availability, governance       | Architecture (from 02)  |
+| IaC Code     | AVM schemas, parameter types       | Resource list (from 04) |
+| Deploy       | Azure state (what-if), credentials | Template structure      |
 
 > **NOTE**: Governance constraints from
 > `04-governance-constraints.md` MUST still be read and enforced —

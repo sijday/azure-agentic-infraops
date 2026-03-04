@@ -8,15 +8,15 @@
 
 ## Overall Progress
 
-| Phase | Title                          | Status          | Commit    | Notes                                                                        |
-| ----: | ------------------------------ | --------------- | --------- | ---------------------------------------------------------------------------- |
-|     0 | Baseline & KPI Definition      | **complete**    | `fcb4327` | Removed phantom refs, tagged `ctx-opt-m1-baseline`                           |
-|     1 | P0 Skill Splits                | **complete**    | `b0de949` | azure-defaults 702→141, azure-artifacts 614→102, 16 ref files, 9 skill descs |
-|     2 | Instruction Optimization+Dedup | **complete**    | `d883b37` | Glob narrows, cross-agent dedup, sharing framework                           |
-|     3 | Instruction Splits             | **complete**    | `97e0dcb` | 5 instruction files: 1660→389 lines (77% reduction)                          |
-|     4 | Error Rate & Burst Reduction   | **complete**    | `85c4a8b` | Remediation messages added to 4 validators                                   |
-|     5 | Agent Body Optimization        | **complete**    | `d0b142a` | 7 agents trimmed (6416→5574), 3 ref files, Boundaries on all 14    |
-|     6 | M1 Measurement Gate            | not-started     | —         | —                                                                            |
+| Phase | Title                          | Status       | Commit    | Notes                                                                        |
+| ----: | ------------------------------ | ------------ | --------- | ---------------------------------------------------------------------------- |
+|     0 | Baseline & KPI Definition      | **complete** | `fcb4327` | Removed phantom refs, tagged `ctx-opt-m1-baseline`                           |
+|     1 | P0 Skill Splits                | **complete** | `b0de949` | azure-defaults 702→141, azure-artifacts 614→102, 16 ref files, 9 skill descs |
+|     2 | Instruction Optimization+Dedup | **complete** | `d883b37` | Glob narrows, cross-agent dedup, sharing framework                           |
+|     3 | Instruction Splits             | **complete** | `97e0dcb` | 5 instruction files: 1660→389 lines (77% reduction)                          |
+|     4 | Error Rate & Burst Reduction   | **complete** | `85c4a8b` | Remediation messages added to 4 validators                                   |
+|     5 | Agent Body Optimization        | **complete** | `d0b142a` | 7 agents trimmed (6416→5574), 3 ref files, Boundaries on all 14              |
+|     6 | M1 Measurement Gate            | not-started  | —         | —                                                                            |
 
 **Branch history**: `fcb4327` → `b0de949` → `d883b37` → `97e0dcb` → `85c4a8b` → `d0b142a` (HEAD)
 

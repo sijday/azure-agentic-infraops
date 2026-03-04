@@ -1,4 +1,5 @@
 <!-- ref:azure-cli-auth-validation-v1 -->
+
 # Azure CLI Token Validation
 
 Standard procedure for validating Azure CLI authentication before

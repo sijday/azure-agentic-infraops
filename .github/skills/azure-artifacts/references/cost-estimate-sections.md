@@ -1,4 +1,5 @@
 <!-- ref:cost-estimate-sections-v1 -->
+
 # Cost Estimate — Section Templates
 
 Full templates and examples for `cost-estimate.instructions.md`.
@@ -13,7 +14,7 @@ Rules and enforcement live in the instruction file.
 **Region**: {primary-region}
 **Environment**: {Production|Staging|Development}
 **MCP Tools Used**: {azure_price_search, azure_cost_estimate,
-  azure_bulk_estimate, azure_region_recommend, azure_sku_discovery}
+azure_bulk_estimate, azure_region_recommend, azure_sku_discovery}
 **Architecture Reference**: {relative link to assessment doc}
 ```
 
@@ -58,16 +59,16 @@ Include a confidence line:
 
 ### Status Indicators
 
-| Status         | Indicator | Usage                                |
-| -------------- | --------- | ------------------------------------ |
-| Under budget   | ✅        | < 80% utilized                       |
-| Near budget    | ⚠️        | 80-100% utilized                     |
-| Over budget    | ❌        | > 100% utilized                      |
-| Recommendation | 💡        | Optimization suggestions             |
-| Savings        | 💰        | Money saved                          |
+| Status         | Indicator | Usage                                 |
+| -------------- | --------- | ------------------------------------- |
+| Under budget   | ✅        | < 80% utilized                        |
+| Near budget    | ⚠️        | 80-100% utilized                      |
+| Over budget    | ❌        | > 100% utilized                       |
+| Recommendation | 💡        | Optimization suggestions              |
+| Savings        | 💰        | Money saved                           |
 | High risk      | 🔴        | Potential to materially increase cost |
-| Medium risk    | 🟡        | Could increase cost under growth     |
-| Low risk       | 🟢        | Predictable                          |
+| Medium risk    | 🟡        | Could increase cost under growth      |
+| Low risk       | 🟢        | Predictable                           |
 
 ### Category Icons
 
@@ -270,10 +271,10 @@ Make variance drivers explicit.
 ```markdown
 ## 🧮 Base Run Cost vs Growth-Variable Cost
 
-| Cost Type       | Drivers     | Examples          | How It Scales             |
-| --------------- | ----------- | ----------------- | ------------------------- |
-| Base run        | fixed SKUs  | App Service, SQL  | step-changes (upgrades)   |
-| Growth-variable | usage-based | egress, logs      | linear with usage         |
+| Cost Type       | Drivers     | Examples         | How It Scales           |
+| --------------- | ----------- | ---------------- | ----------------------- |
+| Base run        | fixed SKUs  | App Service, SQL | step-changes (upgrades) |
+| Growth-variable | usage-based | egress, logs     | linear with usage       |
 ```
 
 ### 14. 🌍 Regional Comparison
@@ -319,10 +320,10 @@ List 3-5 assumptions most likely to change spend.
 ```markdown
 ## 📝 Testable Assumptions
 
-| Assumption     | Why It Matters     | How to Measure    | Threshold   |
-| -------------- | ------------------ | ----------------- | ----------- |
-| Egress < 100GB | keeps costs low    | Cost Mgmt+metrics | >100 GB/mo  |
-| Logs < 5 GB/mo | avoids ingestion $ | LA usage          | >5 GB/mo    |
+| Assumption     | Why It Matters     | How to Measure    | Threshold  |
+| -------------- | ------------------ | ----------------- | ---------- |
+| Egress < 100GB | keeps costs low    | Cost Mgmt+metrics | >100 GB/mo |
+| Logs < 5 GB/mo | avoids ingestion $ | LA usage          | >5 GB/mo   |
 ```
 
 ### 19. 📊 Pricing Data Accuracy

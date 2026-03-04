@@ -1,4 +1,5 @@
 <!-- ref:markdown-formatting-guide-v1 -->
+
 # Markdown Formatting — Detailed Guide
 
 Examples and detailed formatting rules for `markdown.instructions.md`.
@@ -15,7 +16,7 @@ The 120-character limit is strictly enforced. When lines exceed this limit:
 
 **Example — Breaking long lines:**
 
-````markdown
+```markdown
 <!-- BAD: 130+ characters -->
 
 This is a very long line that contains important information about Azure resources and best practices that exceeds the limit.
@@ -24,7 +25,7 @@ This is a very long line that contains important information about Azure resourc
 
 This is a very long line that contains important information about Azure resources
 and best practices that stays within the limit.
-````
+```
 
 ## Code Blocks
 

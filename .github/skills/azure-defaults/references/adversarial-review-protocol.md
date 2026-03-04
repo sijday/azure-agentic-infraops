@@ -1,4 +1,5 @@
 <!-- ref:adversarial-review-protocol-v1 -->
+
 # Adversarial Review Protocol
 
 Standard protocol for invoking `challenger-review-subagent` across
