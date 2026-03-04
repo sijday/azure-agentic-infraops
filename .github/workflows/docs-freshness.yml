@@ -31,23 +31,26 @@ jobs:
           EXIT_CODE=${PIPESTATUS[0]}
           echo "exit_code=$EXIT_CODE" >> "$GITHUB_OUTPUT"
 
-      - name: Check for issues
+      - name: Create issue for staleness
         if: steps.freshness.outputs.exit_code != '0'
         run: |
           BODY=$(cat freshness-output.txt)
+          {
+            echo "## Automatic Freshness Check Failed"
+            echo ""
+            echo "The weekly docs freshness check found issues:"
+            echo ""
+            echo '```'
+            echo "$BODY"
+            echo '```'
+            echo ""
+            echo "**Action required**: Review the findings above and update stale documentation."
+            echo ""
+            echo 'Run `npm run lint:docs-freshness` locally to reproduce.'
+          } > issue-body.md
           gh issue create \
             --title "Docs freshness: staleness detected ($(date +%Y-%m-%d))" \
-            --body "## Automatic Freshness Check Failed
-
-          The weekly docs freshness check found issues:
-
-          \`\`\`
-          $BODY
-          \`\`\`
-
-          **Action required**: Review the findings above and update stale documentation.
-
-          Run \`npm run lint:docs-freshness\` locally to reproduce." \
+            --body-file issue-body.md \
             --label "documentation,maintenance"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

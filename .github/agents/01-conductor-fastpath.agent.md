@@ -23,7 +23,6 @@ tools:
     execute/getTerminalOutput,
     read/readFile,
     read/problems,
-    agent/runSubagent,
     agent,
     edit/createDirectory,
     edit/createFile,
